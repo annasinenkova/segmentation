@@ -1,1 +1,8 @@
+PIL
 tkinter
+torchvision
+warnings
+torch
+random
+numpy
+cv2

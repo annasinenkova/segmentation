@@ -7,7 +7,7 @@ from PIL import ImageTk, Image
 from segmentation import segmentation
 
 
-def set_screen_shape(root, width, height):
+def set_screen_shape(root: tk.Tk, width: int, height: int) -> None:
     """Set the screen size."""
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
@@ -16,7 +16,7 @@ def set_screen_shape(root, width, height):
     root.geometry(f'{width}x{height}+{total_width}+{total_height}')
 
 
-def image_upload():
+def image_upload() -> None:
     """Load an image and display a segmented image on the screen."""
     path = filedialog.askopenfilename(
            filetypes=[('Image File', '.jpg .png .jpeg')]
@@ -46,6 +46,7 @@ def image_upload():
 
 if __name__ == '__main__':
     root = tk.Tk()
+
     root.title('Segmentation')
 
     set_screen_shape(root, 500, 300)

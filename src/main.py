@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import filedialog
 from PIL import ImageTk, Image
 
+from segmentation import segmentation
+
 
 def set_screen_shape(root, width, height):
     screen_width = root.winfo_screenwidth()
@@ -25,8 +27,15 @@ def image_upload():
     img_show.image = raw_img
   
     set_screen_shape(root, img.width, img.height)
-
     img_show.pack(side='bottom', fill='both', expand='yes')
+    
+    segmented_img = segmentation(path)
+    
+    segmented_img = ImageTk.PhotoImage(segmented_img)
+    segmented_img_show = Label(root, image=segmented_img)
+    segmented_img_show.image = segmented_img
+    img_show.destroy()
+    segmented_img_show.pack(side='bottom', fill='both', expand='yes')
 
 
 if __name__ == '__main__':

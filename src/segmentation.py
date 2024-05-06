@@ -7,6 +7,7 @@ import torch
 import random
 import numpy as np
 import cv2
+import os
 
 
 def torch2numpy(torch_dict: dict) -> dict:
@@ -66,7 +67,9 @@ def segmented_image(img: np.ndarray,
                     labels: list,
                     scores: list) -> Image.Image:
     """Return a segmented image."""
-    categories = categories_from_txt('../data/categories.txt')
+    path = os.path.join(os.path.dirname(os.path.dirname(__file__)),
+                        "data", "categories.txt")
+    categories = categories_from_txt(path)
 
     colors = [[random.randint(0, 255) for _ in range(3)] for _ in categories]
 

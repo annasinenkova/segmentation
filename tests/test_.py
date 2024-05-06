@@ -38,7 +38,8 @@ def test_filter():
 
 
 def test_categories_from_txt():
-    path = '../data/tests_data/categories.txt'
+    path = os.path.join(os.path.dirname(os.path.dirname(__file__)),
+                        "data", "tests_data", "categories.txt")
     categories = segmentation.categories_from_txt(path)
 
     assert type(categories) is list
@@ -46,7 +47,8 @@ def test_categories_from_txt():
 
 
 def test_model_predictions():
-    path = '../data/tests_data/test.jpg'
+    path = os.path.join(os.path.dirname(os.path.dirname(__file__)),
+                        "data", "tests_data", "test.jpg")
     output = segmentation.model_predictions(Image.open(path))
 
     boxes, labels, scores = segmentation.filter(output)
@@ -61,7 +63,8 @@ def test_model_predictions():
 
 
 def test_segmentation():
-    path = '../data/tests_data/test.jpg'
+    path = os.path.join(os.path.dirname(os.path.dirname(__file__)),
+                        "data", "tests_data", "test.jpg")
 
     img = segmentation.segmentation(path)
 

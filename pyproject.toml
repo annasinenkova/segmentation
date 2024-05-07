@@ -1,0 +1,35 @@
+[project]
+name = "image-segmentation"
+version = "1"
+
+readme = "README.md"
+requires-python = ">=3.0"
+
+authors = [
+ {name = "Ivan Ivanov"}
+]
+
+keywords = ["tkinter", "project"]
+classifiers = [
+      "Development Status :: 4 - Beta",
+      "Programming Language :: Python :: 3",
+      "License :: OSI Approved :: MIT License",
+      "Operating System :: OS Independent",
+]
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = "requirements.txt" }
+
+[build-system]
+requires = ["Sphinx", "doit", "flake8", "pydocstyle", "setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.flake8]
+extend-ignore = ["E402"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+
+

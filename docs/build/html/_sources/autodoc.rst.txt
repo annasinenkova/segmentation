@@ -1,0 +1,4 @@
+Модули
+=======
+.. automodule:: segmentation
+   :members:

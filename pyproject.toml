@@ -3,7 +3,7 @@ name = "image-segmentation"
 version = "1"
 
 readme = "README.md"
-requires-python = ">=3.0"
+requires-python = ">=3.10"
 
 authors = [
  {name = "Ivan Ivanov"}
@@ -22,7 +22,7 @@ dynamic = ["dependencies"]
 dependencies = { file = "requirements.txt" }
 
 [build-system]
-requires = ["Sphinx", "doit", "flake8", "pydocstyle", "setuptools"]
+requires = ["Sphinx", "doit", "flake8", "pydocstyle", "setuptools", "build"]
 build-backend = "setuptools.build_meta"
 
 [tool.flake8]

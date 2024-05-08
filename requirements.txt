@@ -1,8 +1,8 @@
-PIL
-tkinter
+pillow
+tk
 torchvision
-warnings
+pytest-warnings
 torch
-random
+random2
 numpy
-cv2
+opencv-python

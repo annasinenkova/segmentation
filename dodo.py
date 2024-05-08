@@ -30,3 +30,10 @@ def task_html():
     return {
         'actions': ['make -C docs html']
     }
+    
+    
+def task_wheel():
+    """Build wheel."""
+    return {
+        'actions': ['python3 -m build -w']
+    }

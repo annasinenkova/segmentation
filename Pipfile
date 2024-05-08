@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+PIL = "*"
+tkinter = "*"
+torchvision = "*"
+warnings = "*"
+torch = "*"
+random = "*"
+numpy = "*"
+cv2 = "*"
+
+[dev-packages]
+flake8 = "*"
+sphinx = "*"
+pydocstyle = "*"
+doit = "*"
+pytest = "*"
+
+[requires]
+python_version = "3.10"

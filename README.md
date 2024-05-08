@@ -20,12 +20,23 @@ python3 src/main.py
 ```
 #### Тестирование
 ``` bash
-pytest
+doit tests
+```
+#### Проверка flake8
+``` bash
+doit flake8
+```
+#### Проверка pydocstyle
+``` bash
+doit pydocstyle
 ```
 #### Документация
 ``` bash
-cd docs
-make html
+doit html
+```
+#### Сборка wheel
+``` bash
+doit wheel
 ```
 
 -----

@@ -28,12 +28,14 @@ def task_tests():
 def task_html():
     """Build html."""
     return {
-        'actions': ['make -C docs html']
+        'actions': ['make -C docs html'],
+        'verbosity': 2
     }
-    
-    
+
+
 def task_wheel():
     """Build wheel."""
     return {
-        'actions': ['python3 -m build -w']
+        'actions': ['python3 -m build -w'],
+        'verbosity': 2
     }

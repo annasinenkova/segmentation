@@ -3,8 +3,15 @@
 import tkinter as tk
 from tkinter import filedialog
 from PIL import ImageTk, Image
-
 from segmentation import segmentation
+import os
+import gettext
+import locale
+
+locale.setlocale(locale.LC_ALL, locale.getdefaultlocale())
+_podir = os.path.join(os.path.dirname(__file__), '..', 'translations')
+translation = gettext.translation('messages', _podir, fallback=True)
+_, ngettext = translation.gettext, translation.ngettext
 
 
 def set_screen_shape(root: tk.Tk, width: int, height: int) -> None:
@@ -45,13 +52,15 @@ def image_upload() -> None:
 
 
 if __name__ == '__main__':
+    import locale
+    locale.setlocale(locale.LC_ALL, locale.getdefaultlocale())
     root = tk.Tk()
 
-    root.title('Segmentation')
+    root.title(_('Segmentation'))
 
     set_screen_shape(root, 500, 300)
 
-    upload_bttn = tk.Button(root, text='Choose image', command=image_upload)
+    upload_bttn = tk.Button(root, text=_('Choose image'), command=image_upload)
     upload_bttn.pack(side='bottom', pady=50)
 
     root.mainloop()
